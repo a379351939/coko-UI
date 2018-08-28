@@ -1,0 +1,22 @@
+{
+  "name": "gulu",
+  "version": "0.0.0",
+  "description": "自制UI框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a379351939/gulu-demo.git"
+  },
+  "keywords": [
+    "VUE"
+  ],
+  "author": "tzc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a379351939/gulu-demo/issues"
+  },
+  "homepage": "https://github.com/a379351939/gulu-demo#readme"
+}
