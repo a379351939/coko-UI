@@ -1,6 +1,6 @@
 {
-  "name": "gulu",
-  "version": "0.0.0",
+  "name": "tzc-2018920",
+  "version": "0.0.1",
   "description": "自制UI框架",
   "main": "index.js",
   "scripts": {
