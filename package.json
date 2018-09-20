@@ -1,8 +1,8 @@
 {
   "name": "tzc-2018920",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "自制UI框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
