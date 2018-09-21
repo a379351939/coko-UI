@@ -65,12 +65,16 @@ describe('Input', () => {
     afterEach(()=>{
       vm.$destroy()
     })
-    it('支持 change事件', ()=>{
-      vm = new Constructor({}).$mount
-      const callback = sinon.fake()
-      vm.on('change', callback)
-
-      expect(callback).to.have.been.called
+    it('支持 change,input,focus,blur 事件', () => {
+      ['change', 'input', 'focus', 'blur'].forEach((eventName)=>{
+        vm = new Constructor({}).$mount()
+        const callback = sinon.fake()
+        vm.$on(eventName, callback)
+        let event = new Event(eventName)
+        let inputElement = vm.$el.querySelector('input')
+        inputElement.dispatchEvent(event)
+        expect(callback).to.have.been.calledWith(event)
+      })
     })
   })
 })
