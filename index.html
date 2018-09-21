@@ -36,6 +36,18 @@
   </style>
 </head>
 <body>
+<style>
+  .row{
+    display: flex;
+  }
+
+  .col{
+    height: 100px;
+    background: grey;
+    width: 50%;
+    border: 1px solid red;
+  }
+</style>
 <div id="app">
   <!--<g-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">-->
     <!--JS-->
@@ -49,13 +61,21 @@
     <!--<g-button icon="right" icon-position="right">向后</g-button>-->
   <!--</g-group>-->
   <!--<g-icon name="download"></g-icon>-->
-  <g-input disabled value="a"></g-input>
-  <g-input readonly value="b"></g-input>
-  <g-input value="c" v-model="message"></g-input>
+  <!--<g-input disabled value="a"></g-input>-->
+  <!--<g-input readonly value="b"></g-input>-->
+  <!--<g-input value="c"></g-input>-->
   <!--<g-input value="啊" @change="inputChange" error="姓名不少于二个字"></g-input>-->
   <!--<g-input value="啊" @change="inputChange"></g-input>-->
-
-  <p>{{message}}</p>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
 </div>
 <script src="./src/app.js"></script>
 <!--<script src="//at.alicdn.com/t/font_813821_qsh1c061gn.js"></script>-->
