@@ -33,6 +33,17 @@
     computed: {
       colClass () {
         let {span, offset, ipad, narrowPc, pc, widePc} = this
+        // let x = (obj, str='') => {
+        //   if (!obj) {return []}
+        //   let array = []
+        //   if (obj.span) {
+        //     array.push(`col-${str}${obj.span}`)
+        //   }
+        //   if (obj.offset) {
+        //     array.push(`offset-${str}${obj.span}`)
+        //   }
+        //   return array
+        // }
         return [
           span && `col-${span}`,
           offset && `offset-${offset}`,
@@ -40,6 +51,11 @@
           narrowPc && `col-narrow-pc-${narrowPc.span}`,
           pc && `col-pc-${pc.span}`,
           widePc && `col-wide-pc-${widePc.span}`,
+          // ...x({span, offset}),
+          // ...x(ipad, 'ipad-'),
+          // ...x(narrowPc, 'narrow-pc-'),
+          // ...x(pc, 'pc-'),
+          // ...x(widePc, 'wide-pc-')
         ]
       },
       colStyle () {
