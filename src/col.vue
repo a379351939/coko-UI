@@ -33,7 +33,7 @@
     computed: {
       colClass () {
         let {span, offset, ipad, narrowPc, pc, widePc} = this
-        let x = (obj, str='') => {
+        let createElement = (obj, str='') => {
           if (!obj) {return []}
           let array = []
           if (obj.span) {
@@ -51,11 +51,11 @@
           // narrowPc && `col-narrow-pc-${narrowPc.span}`,
           // pc && `col-pc-${pc.span}`,
           // widePc && `col-wide-pc-${widePc.span}`,
-          ...x({span, offset}),
-          ...x(ipad, 'ipad-'),
-          ...x(narrowPc, 'narrow-pc-'),
-          ...x(pc, 'pc-'),
-          ...x(widePc, 'wide-pc-')
+          ...createElement({span, offset}),
+          ...createElement(ipad, 'ipad-'),
+          ...createElement(narrowPc, 'narrow-pc-'),
+          ...createElement(pc, 'pc-'),
+          ...createElement(widePc, 'wide-pc-')
         ]
       },
       colStyle () {
