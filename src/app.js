@@ -34,21 +34,23 @@ new Vue({
     loading2: false,
     message: ''
   },
-  // methods: {
-  //   inputChange (e) {
-  //     console.log(e.target.value)
-  //   },
-  // },
-  created () {
-    console.log(this)
-    this.$toast('知道不', {
-      position: 'middle',
-      closeButton: {
-        text: '知道了',
-        callback() {console.log('说他知道了')}
-      }
-    })
-  }
+  methods: {
+    // inputChange (e) {
+    //   console.log(e.target.value)
+    // },
+    showToast () {
+      this.$toast(`${parseInt(Math.random() * 10000)}知道不`, {
+        position: 'middle',
+        closeButton: {
+          text: '知道了',
+          callback() {console.log('说他知道了')}
+        }
+      })
+    }
+  },
+  // created () {
+  //   console.log(this)
+  // }
 });
 
 
