@@ -35,14 +35,18 @@ new Vue({
     message: ''
   },
   methods: {
-    inputChange (e) {
-      console.log(e.target.value)
-    },
-    showToast () {
-      this.$toast('这是message')
-    }
+    // inputChange (e) {
+    //   console.log(e.target.value)
+    // },
   },
   created () {
+    console.log(this)
+    this.$toast('多完', {
+      closeButton: {
+        text: '知道了',
+        callback() {console.log('说他知道了')}
+      }
+    })
   }
 });
 

@@ -32,6 +32,11 @@
       font-size: var(--font-size);
     }
   </style>
+  <style>
+    .demo {
+      border: 1px solid red;
+    }
+  </style>
 </head>
 <body>
 <div id="app">
@@ -60,14 +65,14 @@
     <!--<g-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}"></g-col>-->
   <!--</g-row>-->
   <!--<g-layout>-->
-    <!--<g-side></g-side>-->
+    <!--<g-side class="demo"></g-side>-->
     <!--<g-layout>-->
-      <!--<g-header></g-header>-->
-      <!--<g-content></g-content>-->
-      <!--<g-footer></g-footer>-->
+      <!--<g-header class="demo"></g-header>-->
+      <!--<g-content class="demo"></g-content>-->
+      <!--<g-footer class="demo"></g-footer>-->
     <!--</g-layout>-->
   <!--</g-layout>-->
-  <button @click="showToast">点我</button>
+  <button>点我</button>
 </div>
 <script src="./src/app.js"></script>
 <!--<script src="//at.alicdn.com/t/font_813821_qsh1c061gn.js"></script>-->
