@@ -2,7 +2,7 @@
   <div class="toast">
     <slot></slot>
     <span class="line"></span>
-    <span class="close" v-if="closeButton" @click="closeButton.callback">
+    <span class="close" v-if="closeButton" @click="onClickClose()">
       {{ closeButton.text }}
     </span>
   </div>
@@ -23,9 +23,8 @@
         type: Object,
         default: () => {
           return {
-            text: '关闭', callback: (toast) => {
-              console.log(toast)
-            }
+            text: '关闭',
+            callback: []
           }
         }
       }
@@ -41,6 +40,10 @@
       close () {
         this.$el.remove()
         this.$destroy()
+      },
+      onClickClose() {
+        this.close()
+        this.closeButton.callback()
       }
     }
   }
