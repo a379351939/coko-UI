@@ -72,9 +72,33 @@
       <!--<g-footer class="demo"></g-footer>-->
     <!--</g-layout>-->
   <!--</g-layout>-->
-  <button @click="showToast1">top</button>
-  <button @click="showToast2">middle</button>
-  <button @click="showToast3">bottom</button>
+  <!--<button @click="showToast1">top</button>-->
+  <!--<button @click="showToast2">middle</button>-->
+  <!--<button @click="showToast3">bottom</button>-->
+  <g-tabs :selected.sync="selectedTab" direaction="">
+    <g-tabs-head>
+      <g-tabs-item name="infoTech">
+        IT
+      </g-tabs-item>
+      <g-tabs-item name="finance">
+        体育
+      </g-tabs-item>
+      <g-tabs-item name="sports">
+        财经
+      </g-tabs-item>
+    </g-tabs-head>
+    <g-tabs-body>
+      <g-tabs-panel name="infoTech">
+        IT相关
+      </g-tabs-panel>
+      <g-tabs-panel name="finance">
+        体育相关
+      </g-tabs-panel>
+      <g-tabs-panel name="sports">
+        财经相关
+      </g-tabs-panel>
+    </g-tabs-body>
+  </g-tabs>
 </div>
 <script src="./src/app.js"></script>
 <!--<script src="//at.alicdn.com/t/font_813821_qsh1c061gn.js"></script>-->

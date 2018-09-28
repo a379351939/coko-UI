@@ -11,6 +11,11 @@ import Footer from './layout/footer'
 import Content from  './layout/content'
 import Side from './layout/side'
 import Toast from './toast'
+import Tabs from './tabs/tabs'
+import TabsBody from './tabs/tabsBody'
+import TabsHead from './tabs/tabsHead'
+import TabsItem from './tabs/tabsItem'
+import TabsPanel from './tabs/tabsPanel'
 import plugin from './plugin'
 
 Vue.component('g-button', Button)
@@ -25,6 +30,11 @@ Vue.component('g-footer', Footer)
 Vue.component('g-content', Content)
 Vue.component('g-side', Side)
 Vue.component('g-toast', Toast)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-panel', TabsPanel)
 Vue.use(plugin)
 
 new Vue({
