@@ -22,7 +22,7 @@
       },
       autoCloseDelay: {
         type: Number,
-        default: 500
+        default: 5
       },
       closeButton: {
         type: Object,
@@ -82,9 +82,19 @@
   $font-size: 14px;
   $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, 0.75);
-  @keyframes fade-in {
+  $animation-duration: 500ms;
+
+  @keyframes slide-up {
     0% {opacity: 0; transform: translateY(100%)}
     100% {opacity: 1; transform: translateY(0%)}
+  }
+  @keyframes slide-down {
+    0% {opacity: 0; transform: translateY(-100%)}
+    100% {opacity: 1; transform: translateY(0%)}
+  }
+  @keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }
   .wrapper {
     position: fixed;
@@ -92,16 +102,28 @@
     transform: translateX(-50%);
     &.position-top {
       top: 0;
+      .toast {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        animation: slide-down $animation-duration;
+      }
     }
     &.position-middle {
-      top: 50%; transform: translateY(-50%);
+      top: 50%; transform: translateX(-50%) translateY(-50%);
+      .toast {
+        animation: fade-in $animation-duration;
+      }
     }
     &.position-bottom {
       bottom: 0;
+      .toast {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        animation: slide-up $animation-duration;
+      }
     }
   }
   .toast {
-    animation: fade-in 1s;
     font-size: $font-size; min-height: $toast-min-height;
     display: flex; align-items: center;
     background: $toast-bg; border-radius: 4px; box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);

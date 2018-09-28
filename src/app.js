@@ -38,15 +38,24 @@ new Vue({
     // inputChange (e) {
     //   console.log(e.target.value)
     // },
-    showToast () {
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
+    showToast (position) {
       this.$toast(`${parseInt(Math.random() * 10000)}知道不`, {
-        position: 'middle',
+        position,
         closeButton: {
           text: '知道了',
           callback() {console.log('说他知道了')}
         }
       })
-    }
+    },
   },
   // created () {
   //   console.log(this)
