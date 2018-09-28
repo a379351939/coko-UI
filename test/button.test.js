@@ -77,3 +77,22 @@ describe('Button', () => {
 
   })
 })
+
+// describe('Toast', () => {
+//   it('存在', () => {
+//     expect(Toast).to.exist
+//   })
+//   describe('props', () => {
+//     const div = document.createElement('div')
+//     document.body.appendChild(div)
+//     const Constructor = Vue.extend(Toast)
+//     let vm
+//     afterEach(() => {
+//       div.remove()
+//       vm.$destroy()
+//     })
+//     it('接收autoClose', (done) => {
+//       vm = new
+//     })
+//   })
+// })

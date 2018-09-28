@@ -3,7 +3,7 @@
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
-        <div  v-else v-html="$slots.default[0]"></div>
+        <div v-else v-html="$slots.default[0]"></div>
       </div>
       <span class="line" ref="line"></span>
       <span class="close" v-if="closeButton" @click="onClickClose()">
@@ -17,12 +17,11 @@
     name: 'GuluToast',
     props: {
       autoClose: {
-        type: Boolean,
-        default: true
-      },
-      autoCloseDelay: {
-        type: Number,
-        default: 5
+        type: [Boolean, Number],
+        default: 5,
+        validator (value) {
+          return value === false || typeof value === 'number'
+        }
       },
       closeButton: {
         type: Object,
@@ -43,7 +42,6 @@
     mounted () {
       this.executeCloseButton()
       this.updateStyle()
-      // console.log(this)
     },
     computed: {
       toastClasses() {
@@ -58,7 +56,7 @@
       },
       onClickClose() {
         this.close()
-        if (this.closeButton && typeof this.closeButton === 'function') {
+        if (this.closeButton && typeof this.closeButton.callback === 'function') {
           this.closeButton.callback()
         }
       },
@@ -66,7 +64,7 @@
         if (this.autoClose) {
           setTimeout(() => {
             this.close()
-          }, this.autoCloseDelay * 1000)
+          }, this.autoClose * 1000)
         }
       },
       updateStyle () {
@@ -127,7 +125,7 @@
     font-size: $font-size; min-height: $toast-min-height;
     display: flex; align-items: center;
     background: $toast-bg; border-radius: 4px; box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.50);
-    padding: 0 16px; color: $color;
+    padding: 0 16px; color: $color; width: 288px;
     .line {
       height: 100%;
       border: 1px solid #5f5f5f;
@@ -139,6 +137,9 @@
     }
     .message {
       padding: 8px 0;
+      width: 225px;
+      display: flex;
+      justify-content: center;
     }
   }
 </style>
