@@ -11,10 +11,12 @@
   export default {
     name: 'GuluTabsHead',
     inject: ['eventBus'],
-    created(){
+    mounted(){
       this.eventBus.$on('update:selected', (item, vm) => {
-        console.log(item)
-        console.log(vm)
+        let vmAttr = vm.$el.getBoundingClientRect()
+        console.log(vmAttr.left)
+        this.$refs.line.style.left = `${vmAttr.left}px`
+        this.$refs.line.style.width = `${vmAttr.width}px`
       })
     }
   }
@@ -26,14 +28,12 @@
     display: flex;
     height: $tab-height;
     justify-content: flex-start;
-    align-items: center;
     border: 1px solid;
     position: relative;
     > .line {
       position: absolute;
       bottom: 0;
       border-bottom: $blue solid 1px;
-      width: 50px;
     }
 
     > .actions-wrapper {

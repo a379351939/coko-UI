@@ -47,7 +47,6 @@
 <style lang="scss" scoped>
   $blue: blue;
   .tabs-item {
-    flex-shrink: 0;
     padding: 0 1em;
     cursor: pointer;
     height: 100%;

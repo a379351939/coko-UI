@@ -34,9 +34,9 @@
       // this.$emit('update:selected', 'xxx')
       // this.$emit('update:selected', '这是 this $emit 出来的数据')
       this.$children.forEach((vm) => {
-        vm.$children.forEach((child) => {
-          if(child.name === this.selected && child.$options.name === 'GuluTabsItem'){
-            this.eventBus.$emit('update:selected', this.selected, child)
+        vm.$children.forEach((vmChild) => {
+          if(vmChild.name === this.selected && vmChild.$options.name === 'GuluTabsItem'){
+            this.eventBus.$emit('update:selected', this.selected, vmChild)
           }
         })
       })
