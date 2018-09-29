@@ -75,15 +75,19 @@
   <!--<button @click="showToast1">top</button>-->
   <!--<button @click="showToast2">middle</button>-->
   <!--<button @click="showToast3">bottom</button>-->
-  <g-tabs :selected.sync="selectedTab" direaction="">
+  <g-tabs :selected="selectedTab">
     <g-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
       <g-tabs-item name="infoTech">
+        <g-icon name="settings"></g-icon>
         IT
       </g-tabs-item>
-      <g-tabs-item name="finance">
+      <g-tabs-item name="sports" disable>
         体育
       </g-tabs-item>
-      <g-tabs-item name="sports">
+      <g-tabs-item name="finance">
         财经
       </g-tabs-item>
     </g-tabs-head>
@@ -91,10 +95,10 @@
       <g-tabs-panel name="infoTech">
         IT相关
       </g-tabs-panel>
-      <g-tabs-panel name="finance">
+      <g-tabs-panel name="sports">
         体育相关
       </g-tabs-panel>
-      <g-tabs-panel name="sports">
+      <g-tabs-panel name="finance">
         财经相关
       </g-tabs-panel>
     </g-tabs-body>

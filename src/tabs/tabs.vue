@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+  import Vue from 'vue'
   export default {
     name: 'GuluTabs',
     props: {
@@ -19,12 +20,31 @@
         }
       }
     },
-    created(){
+    data () {
+      return {
+        eventBus: new Vue()
+      }
+    },
+    provide(){
+      return {
+        eventBus: this.eventBus
+      }
+    },
+    mounted () {
       // this.$emit('update:selected', 'xxx')
-    }
+      // this.$emit('update:selected', '这是 this $emit 出来的数据')
+      this.$children.forEach((vm) => {
+        vm.$children.forEach((child) => {
+          if(child.name === this.selected && child.$options.name === 'GuluTabsItem'){
+            this.eventBus.$emit('update:selected', this.selected, child)
+          }
+        })
+      })
+    },
+
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .tab {
 
   }

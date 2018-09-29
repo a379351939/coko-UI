@@ -42,7 +42,8 @@ new Vue({
   data: {
     loading1: false,
     loading2: false,
-    message: ''
+    message: '',
+    selectedTab: 'sports'
   },
   methods: {
     // inputChange (e) {
@@ -66,6 +67,10 @@ new Vue({
         }
       })
     },
+    // yyy(data){
+    //   console.log('yyy')
+    //   console.log(data);
+    // }
   },
   // created () {
   //   console.log(this)

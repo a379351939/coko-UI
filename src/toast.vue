@@ -75,7 +75,7 @@
     }
   }
 </script>
-<style scoped lang="scss">
+<style lang="scss" scoped>
   $color: white;
   $font-size: 14px;
   $toast-min-height: 40px;
