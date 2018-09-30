@@ -39,7 +39,7 @@ module.exports = function (config) {
     port: 9876,
 
 
-    // enable / disable colors in the output (reporters and logs)
+    // enable / disabled colors in the output (reporters and logs)
     colors: true,
 
 
@@ -48,7 +48,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
+    // enable / disabled watching file and executing tests whenever any file changes
     autoWatch: true,
 
 

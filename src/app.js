@@ -43,7 +43,7 @@ new Vue({
     loading1: false,
     loading2: false,
     message: '',
-    selectedTab: 'sports'
+    selectedTab: 'infoTech'
   },
   methods: {
     // inputChange (e) {
@@ -76,10 +76,3 @@ new Vue({
   //   console.log(this)
   // }
 });
-
-
-import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies)
-
-const expect = chai.expect

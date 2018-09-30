@@ -31,8 +31,9 @@
       }
     },
     mounted () {
-      // this.$emit('update:selected', 'xxx')
-      // this.$emit('update:selected', '这是 this $emit 出来的数据')
+      if(this.$children.length === 0){
+        console.warn('tabs的子组件应当为tabs-head或tabs-body,但你没有写子组件')
+      }
       this.$children.forEach((vm) => {
         vm.$children.forEach((vmChild) => {
           if(vmChild.name === this.selected && vmChild.$options.name === 'GuluTabsItem'){
