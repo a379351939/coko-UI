@@ -13,10 +13,10 @@
     inject: ['eventBus'],
     mounted(){
       this.eventBus.$on('update:selected', (item, vm) => {
-        let vmAttr = vm.$el.getBoundingClientRect()
-        console.log(vmAttr.left)
-        this.$refs.line.style.left = `${vmAttr.left}px`
-        this.$refs.line.style.width = `${vmAttr.width}px`
+        // let vmAttr = vm.$el.getBoundingClientRect()
+        let {width, height, left, top} = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.left = `${left}px`
+        this.$refs.line.style.width = `${width}px`
       })
     }
   }
@@ -28,12 +28,12 @@
     display: flex;
     height: $tab-height;
     justify-content: flex-start;
-    border: 1px solid;
     position: relative;
     > .line {
       position: absolute;
       bottom: 0;
       border-bottom: $blue solid 1px;
+      transition: all 250ms;
     }
 
     > .actions-wrapper {
