@@ -1,9 +1,11 @@
 <template>
   <div class="popover" @click.stop="xxx">
-    <div class="content-wrapper" v-if="visible" @click.stop>
+    <div ref="contentWrapper" class="content-wrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="triggerWrapper">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -16,26 +18,33 @@
       }
     },
     methods: {
-      xxx () {
+      xxx () {                                    
         this.visible = !this.visible;
         this.$nextTick( ()=>{
+          console.log(this.$refs.triggerWrapper)
+          document.body.appendChild(this.$refs.contentWrapper)
+          let {top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
+          console.log(top);
+          console.log(left);
+          this.$refs.contentWrapper.style.left = left + 'px'
+          this.$refs.contentWrapper.style.top = top + 'px'
           if(this.visible === true) {
-            let x = () => {
+            let eventHandler = () => {
               this.visible = false
-              document.removeEventListener('click', x)
+              document.removeEventListener('click', eventHandler)
               console.log('doc隐藏');
             }
-            document.addEventListener('click', x)
-          }else{
-            console.log('vm隐藏')
+            document.addEventListener('click', eventHandler)
           }
         })
       }
-    }
+    },
+    // mounted(){
+    // }
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   .popover {
     display: inline-block;
     vertical-align: top;
