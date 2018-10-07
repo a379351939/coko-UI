@@ -24,6 +24,7 @@
   "homepage": "https://github.com/a379351939/gulu-demo#readme",
   "dependencies": {
     "chai-spies": "^1.0.0",
+    "npm": "^6.4.1",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.0"
   },

@@ -70,9 +70,9 @@ new Vue({
         }
       })
     },
-    // yyy(){
-    //   console.log('yyy')
-    // }
+    yyy(){
+      console.log('yyy')
+    }
   },
   // created () {
   //   console.log(this)
