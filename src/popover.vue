@@ -3,7 +3,7 @@
     <div ref="contentWrapper" class="content-wrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper">
+    <span ref="triggerWrapper" style="display: inline-block ">
       <slot></slot>
     </span>
   </div>
@@ -25,8 +25,12 @@
         this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
       },
       onClickDocument (event) {
+
         if (this.$refs.popover &&
           (this.$refs.popover === event.target || this.$refs.popover.contains(event.target))
+        ) { return }
+        if (this.$refs.contentWrapper &&
+          (this.$refs.contentWrapper === event.target || this.$refs.contentWrapper.contains(event.target))
         ) { return }
         this.close ()
       },
@@ -40,7 +44,6 @@
       close () {
         this.visible = false
         document.removeEventListener('click', this.onClickDocument)
-        console.log('关闭')
       },
       onclick (event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {
@@ -67,7 +70,29 @@
     position: absolute;
     left: 0;
     border: 1px solid;
-    box-shadow: 0 0 3px rgba(0,0,0,.5);
+    /*box-shadow: 0 0 3px rgba(0,0,0,.5);*/
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
+    background: white;
     transform: translateY(-100%);
+    margin-top: -10px;
+    padding: .5em 1em;
+    max-width: 20em;
+    word-break: break-all;
+    &::before,&::after {
+      content: '';
+      display: block;
+      border: 10px solid transparent;
+      position: absolute;
+      left: 10px;
+    }
+    &::before {
+      top: 100%;
+      border-top-color: black;
+    }
+    &::after {
+      border-top-color: white;
+      top: calc(100% - 1px);
+    }
+
   }
 </style>
