@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click="onclick" ref="popover">
+  <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible"
          :class="{[`position-${position}`]:true}">
       <slot name="content"></slot>
@@ -25,27 +25,57 @@
         validator (value) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
         }
+      },
+      trigger: {
+        type: String,
+        default: 'click',
+        validator (value) {
+          return ['click', 'hover'].indexOf(value) >= 0
+        }
+      }
+    },
+    mounted () {
+      if(this.trigger === 'click') {
+        this.$refs.popover.addEventListener('click',this.onClick)
+      } else {
+        this.$refs.popover.addEventListener('mouseenter', this.open)
+        this.$refs.popover.addEventListener('mouseleave', this.close)
+      }
+    },
+    destroyed () {
+      if(this.trigger === 'click') {
+        this.$refs.popover.removeEventListener('click',this.onClick)
+      } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseleave', this.close)
       }
     },
     methods: {
       positionContent() {
         const {contentWrapper, triggerWrapper} = this.$refs
         document.body.appendChild(contentWrapper)
-        let {top, left, height, width} = triggerWrapper.getBoundingClientRect()
-        let {height: height2} = contentWrapper.getBoundingClientRect()
-        if(this.position === 'top') {
-          contentWrapper.style.left = left + scrollX + 'px'
-          contentWrapper.style.top = top + scrollY + 'px'
-        }else if(this.position === 'bottom') {
-          contentWrapper.style.left = left + scrollX + 'px'
-          contentWrapper.style.top = top + height + scrollY + 'px'
-        }else if(this.position === 'left') {
-          contentWrapper.style.left = left + scrollX + 'px'
-          contentWrapper.style.top = top + scrollY + (height - height2) / 2 + 'px'
-        }else if(this.position === 'right') {
-          contentWrapper.style.left = left + width + scrollX + 'px'
-          contentWrapper.style.top = top + scrollY + (height - height2) / 2 + 'px'
+        const {top, left, height, width} = triggerWrapper.getBoundingClientRect()
+        const {height: height2} = contentWrapper.getBoundingClientRect()
+        let positions = {
+          top: {
+            left: left + scrollX + 'px',
+            top: top + scrollY + 'px'
+          },
+          bottom: {
+            left: left + scrollX + 'px',
+            top: top + height + scrollY + 'px'
+          },
+          left: {
+            left: left + scrollX + 'px',
+            top:  top + scrollY + (height - height2) / 2 + 'px'
+          },
+          right: {
+            left: left + width + scrollX + 'px',
+            top: top + scrollY + (height - height2) / 2 + 'px'
+          }
         }
+        contentWrapper.style.left = positions[this.position].left
+        contentWrapper.style.top = positions[this.position].top
       },
       onClickDocument (event) {
         if (this.$refs.popover &&
@@ -67,7 +97,7 @@
         this.visible = false
         document.removeEventListener('click', this.onClickDocument)
       },
-      onclick (event) {
+      onClick (event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {
           if (this.visible === true) {
             this.close()
