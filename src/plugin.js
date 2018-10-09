@@ -18,30 +18,6 @@ export default {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // helper
 
 function createToast({Vue, message, propsData, onClose}){
