@@ -38,7 +38,7 @@
       if(this.trigger === 'click') {
         this.$refs.popover.addEventListener('click',this.onClick)
       } else {
-        this.$refs.popover.addEventListener('mouseenter', this.open)
+        this.$refs.popover.addEventListener('mouseenter', this.show)
         this.$refs.popover.addEventListener('mouseleave', this.close)
       }
     },
@@ -46,7 +46,7 @@
       if(this.trigger === 'click') {
         this.$refs.popover.removeEventListener('click',this.onClick)
       } else {
-        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseenter', this.show)
         this.$refs.popover.removeEventListener('mouseleave', this.close)
       }
     },
@@ -86,7 +86,7 @@
         ) { return }
         this.close ()
       },
-      open () {
+      show () {
         this.visible = true
         this.$nextTick( ()=>{
           this.positionContent()
@@ -102,7 +102,7 @@
           if (this.visible === true) {
             this.close()
           } else {
-            this.open()
+            this.show()
           }
         }
       }

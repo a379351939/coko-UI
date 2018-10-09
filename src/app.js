@@ -49,12 +49,9 @@ new Vue({
     loading1: false,
     loading2: false,
     message: '',
-    selectedTab: 'infoTech'
+    selectedTab: ['2','1','3']
   },
   methods: {
-    // inputChange (e) {
-    //   console.log(e.target.value)
-    // },
     showToast1(){
       this.showToast('top')
     },
@@ -72,9 +69,6 @@ new Vue({
           callback() {console.log('说他知道了')}
         }
       })
-    }
+    },
   },
-  // created () {
-  //   console.log(this)
-  // }
 })

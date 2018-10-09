@@ -37,7 +37,7 @@
           console.warn('tabs的子组件应当为tabs-head或tabs-body,但你没有写子组件')
         }
       },
-      seletedTab () {
+      selectedTab () {
         this.$children.forEach((vm) => {
           vm.$children.forEach((vmChild) => {
             if(vmChild.name === this.selected && vmChild.$options.name === 'GuluTabsItem'){
@@ -49,7 +49,7 @@
     },
     mounted () {
       this.checkChildren()
-      this.seletedTab()
+      this.selectedTab()
     },
 
   }
