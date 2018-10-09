@@ -48,7 +48,7 @@
 </script>
 <style lang="scss" scoped>
   $blue: blue;
-  $disable-color: #ccc;
+  $disabled-color: #ccc;
   .tabs-item {
     padding: 0 1em;
     cursor: pointer;
@@ -58,8 +58,8 @@
     &.active {
       color: $blue;
     }
-    &.disable {
-      color: $disable-color;
+    &.disabled {
+      color: $disabled-color;
       cursor: not-allowed;
     }
   }

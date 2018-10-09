@@ -11,23 +11,33 @@ describe('Popover', () => {
     expect(Popover).to.exist
   })
   describe('props', () => {
+    Vue.component('g-popover', Popover)
     const div = document.createElement('div')
     document.body.appendChild(div)
     const Constructor = Vue.extend(Popover)
-    let vm
     afterEach(() => {
       div.remove()
       // vm.$destroy()
     })
-    it('接收 value', ()=>{
-      vm = new Constructor({
-        propsData: {
-          position: 'bottom'
-        }
-      }).$mount(div)
-      // console.log(vm.$el.outerHTML)
-      // const inputElement = vm.$el.querySelector('input')
-      // expect(inputElement.value).to.equal('1234')
+    it('接收 position', (done)=>{
+      div.innerHTML = `
+  <g-popover position="bottom" ref="a">
+    <template slot="content">
+      popover内容
+    </template>
+    <button>点我</button>
+  </g-popover>
+      `
+      const vm = new Vue({
+        el: div
+      })
+      vm.$nextTick(()=> {
+        vm.$el.querySelector('button').click()
+        vm.$nextTick(()=>{
+          expect(vm.$refs.a.$refs.contentWrapper.classList.contains('position-bottom')).to.equal(true)
+          done()
+        })
+      })
     })
   })
 })

@@ -69,9 +69,6 @@ new Vue({
           callback() {console.log('说他知道了')}
         }
       })
-    },
-    yyy(){
-      console.log('yyy')
     }
   },
   // created () {
