@@ -26,12 +26,12 @@
 </head>
 <body>
 <div id="app" style="margin-left: 100px; margin-top: 100px">
-  <g-collapse :selected.sync="selectedTab" single>
-    <g-collapse-item title="标题15" name="12">内容1</g-collapse-item>
-    <g-collapse-item title="标题21" name="22">内容2</g-collapse-item>
-    <g-collapse-item title="标题33" name="32">内容3</g-collapse-item>
-  </g-collapse>
-  {{selectedTab}}
+  <!--<g-collapse :selected.sync="selectedTab" single>-->
+    <!--<g-collapse-item title="标题15" name="12">内容1</g-collapse-item>-->
+    <!--<g-collapse-item title="标题21" name="22">内容2</g-collapse-item>-->
+    <!--<g-collapse-item title="标题33" name="32">内容3</g-collapse-item>-->
+  <!--</g-collapse>-->
+  <!--{{selectedTab}}-->
   <!--<g-popover position="bottom">-->
     <!--<template slot="content" slot-scope="{close}">-->
       <!--<div>popover内容popover内容popover内容popover内容popover内容popover内容</div>-->
@@ -57,17 +57,17 @@
     <!--</template>-->
     <!--<g-button>点我</g-button>-->
   <!--</g-popover>-->
-  <!--<g-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">-->
-    <!--JS-->
-  <!--</g-button>-->
-  <!--<g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">-->
-    <!--JS-->
-  <!--</g-button>-->
-  <!--<g-group>-->
-    <!--<g-button icon="left">向前</g-button>-->
-    <!--<g-button>更多</g-button>-->
-    <!--<g-button icon="right" icon-position="right">向后</g-button>-->
-  <!--</g-group>-->
+  <g-button icon="settings" icon-position="right" :loading="loading1" @click="loading1 = !loading1">
+    JS
+  </g-button>
+  <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
+    JS
+  </g-button>
+  <g-group>
+    <g-button icon="left">向前</g-button>
+    <g-button>更多</g-button>
+    <g-button icon="right" icon-position="right">向后</g-button>
+  </g-group>
   <!--<g-input disabled value="a"></g-input>-->
   <!--<g-input readonly value="b"></g-input>-->
   <!--<g-input value="c"></g-input>-->
