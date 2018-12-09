@@ -1,13 +1,15 @@
 {
   "name": "tzc-2018920",
   "version": "0.0.2",
-  "description": "自制UI框架",
+  "description": "这是自制UI框架",
   "main": "dist/index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "build": "parcel build index.js --no-cache --no-minify",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -42,7 +44,8 @@
     "parcel-bundler": "^1.9.7",
     "sinon": "^6.3.4",
     "sinon-chai": "^3.2.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vuepress": "^0.14.8"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"

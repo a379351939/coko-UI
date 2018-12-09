@@ -45,7 +45,6 @@
     }
   }
 </script>
-
 <style scoped lang="scss">
   $grey: #ddd;
   $border-radius: 4px;
