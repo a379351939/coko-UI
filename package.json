@@ -1,6 +1,6 @@
 {
   "name": "tzc-2018920",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "这是自制UI框架",
   "main": "dist/index.js",
   "scripts": {

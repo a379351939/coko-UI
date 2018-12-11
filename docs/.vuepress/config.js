@@ -1,5 +1,6 @@
 module.exports = {
   title: 'cokoUI',
+  base: '/gulu-demo/',
   description: '一个自制UI框架',
   themeConfig: {
     nav: [
