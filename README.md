@@ -4,26 +4,23 @@
 
 ## 介绍
 
-学习vue过程中做个的一个 UI 框架。
+做个UI框架学习Vue。
 - [官方文档](https://a379351939.github.io/coko-UI/)
 
 ## 开始使用
 
-1. 安装
-
-使用框架前，在CSS中开启 border-box 
-    ```
-    *,*::before,*::after{box-sizing: border-box;}
-    ```
-
-2 .安装 coko-ui
+1 .安装 coko-ui
     ```
     npm i --save coko-ui
     ```   
-3 .引入 coko-ui
+2 .引入 coko-ui
     ```
+    import Vue from 'vue'
     import {Button, Group, Icon} from  'coko-ui'
+    import 'coko-ui/dist/index.css'
+    import plugin from './plugin'
     
+    Vue.use(plugin)
     Vue.component('c-button', Button)
     Vue.component('c-icon', Icon)
     Vue.component('c-group', ButtonGroup)
