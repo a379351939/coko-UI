@@ -1,12 +1,11 @@
 module.exports = {
   title: 'cokoUI',
-  base: '/gulu-demo/',
+  base: '/coko-UI/',
   description: '一个自制UI框架',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '文档', link: 'http://google.com' },
-      { text: '交流', link: 'http://google.com' },
+      { text: 'github', link: 'https://github.com/a379351939/coko-UI' },
     ],
     sidebar: [
       {
@@ -18,7 +17,7 @@ module.exports = {
       },
       {
         title: '组件',
-        children: ['/components/button']
+        children: ['/components/button', '/components/input', '/components/grid', '/components/layout', '/components/popover', '/components/tabs', '/components/toast']
       },
     ]
   },

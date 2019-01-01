@@ -1,6 +1,6 @@
 # CokoUI 一个Vue UI 组件
 
-[![Build Status](https://travis-ci.org/a379351939/gulu-demo.svg?branch=master)](https://travis-ci.org/a379351939/gulu-demo)
+[![Build Status](https://travis-ci.org/a379351939/coko-UI.svg?branch=master)](https://travis-ci.org/a379351939/gulu-demo)
 
 ## 介绍
 
@@ -24,12 +24,8 @@
     ```
     import {Button, Group, Icon} from  'coko-ui'
     
-    export default {
-      components: {
-        'c-button': Button,
-        'c-icon': Icon,
-        'c-group': Group
-      }
-    }
+    Vue.component('c-button', Button)
+    Vue.component('c-icon', Icon)
+    Vue.component('c-group', ButtonGroup)
     ``` 
 

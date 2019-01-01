@@ -1,7 +1,7 @@
 <template>
   <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-    <g-icon v-if="icon && !loading" :name="icon" class="icon"></g-icon>
-    <g-icon class="loading icon" name="loading" v-if="loading"></g-icon>
+    <c-icon v-if="icon && !loading" :name="icon" class="icon"></c-icon>
+    <c-icon class="loading icon" name="loading" v-if="loading"></c-icon>
     <div class="g-button-content">
       <slot/>
     </div>
@@ -10,12 +10,12 @@
 <script>
   import Vue from 'vue'
   import Icon from './icon'
-  Vue.component('g-icon', Icon)
+  Vue.component('c-icon', Icon)
 
   export default {
     // props:['icon', 'iconPosition']
     component: {
-      'g-icon': Icon
+      'c-icon': Icon
     },
     props: {
       icon: {},

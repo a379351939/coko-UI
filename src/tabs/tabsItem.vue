@@ -5,7 +5,7 @@
 </template>
 <script>
   export default {
-    name: 'GuluTabsItem',
+    name: 'TabsItem',
     inject: ['eventBus'],
     data () {
       return {
@@ -46,6 +46,8 @@
     }
   }
 </script>
+
+
 <style lang="scss" scoped>
   $blue: blue;
   $disabled-color: #ccc;

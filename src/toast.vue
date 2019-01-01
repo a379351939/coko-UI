@@ -14,8 +14,8 @@
 </template>
 <script>
   export default {
-    name: 'GuluToast',
-    props: {
+    name: 'Toast',
+      props: {
       autoClose: {
         type: [Boolean, Number],
         default: 5,
@@ -99,6 +99,7 @@
     left: 50%;
     transform: translateX(-50%);
     &.position-top {
+      z-index: 20;
       top: 0;
       .toast {
         border-top-left-radius: 0;

@@ -20,4 +20,15 @@ import TabsItem from './src/tabs/tabsItem'
 import TabsPanel from './src/tabs/tabsPanel'
 import Plugin from './src/plugin'
 
+// const components = [Button, ButtonGroup, Icon, Col, Input, Popover, Row, Toast, Collapse, CollapseItem, Content, Footer, Header, Layout, Side, Tabs, TabsBody, TabsHead, TabsItem, TabsPanel, Plugin]
+//
+// const install = Vue => {
+//   components.forEach(component => {
+//     component.install = Vue => Vue.component(component.name, component)
+//     component.install(Vue)
+//   })
+// }
+
+
 export {Button, ButtonGroup, Icon, Col, Input, Popover, Row, Toast, Collapse, CollapseItem, Content, Footer, Header, Layout, Side, Tabs, TabsBody, TabsHead, TabsItem, TabsPanel, Plugin}
+// export default { install }

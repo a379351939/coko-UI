@@ -16,7 +16,7 @@
     return valid
   }
   export default {
-    name: 'G-col',
+    name: 'Col',
     props: {
       span: {type: [Number, String]},
       offset: {type: [Number, String]},
@@ -69,10 +69,7 @@
 </script>
 <style scoped lang="scss">
   .col{
-    height: 100px;
-    width: 50%;
-    border: 1px solid red;
-
+    box-sizing: border-box;
     $class-prefix: col-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {

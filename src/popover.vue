@@ -1,7 +1,6 @@
 <template>
   <div class="popover" ref="popover">
-    <div ref="contentWrapper" class="content-wrapper" v-if="visible"
-         :class="{[`position-${position}`]:true}">
+    <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]:true}">
       <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display: inline-block">
@@ -12,7 +11,7 @@
 
 <script>
   export default {
-    name: "GuluPopover",
+    name: "Popover",
     props: {
       position: {
         type: String,
@@ -120,7 +119,7 @@
     position: absolute;
     left: 0;
     border: 1px solid;
-    border-radius: var(--border-radius);
+    border-radius: 4px;
     filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.5));
     background: white;
     padding: .5em 1em;

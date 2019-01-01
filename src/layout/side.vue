@@ -1,10 +1,10 @@
 <template>
-  <div class="side">side
+  <div class="side">
     <slot></slot>
   </div>
 </template>
 <script>
   export default {
-    name: 'GuluSide',
+    name: 'Side',
   }
 </script>
