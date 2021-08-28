@@ -10,10 +10,13 @@
 ## 开始使用
 
 1 .安装 coko-ui
+
     ```
     npm i --save coko-ui
     ```   
+    
 2 .引入 coko-ui
+
     ```
     import Vue from 'vue'
     import {Button, Group, Icon} from  'coko-ui'
@@ -25,4 +28,3 @@
     Vue.component('c-icon', Icon)
     Vue.component('c-group', ButtonGroup)
     ``` 
-
